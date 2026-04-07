@@ -25,9 +25,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ text, completed, dueDate, on
       </Pressable>
 
       <View style={styles.textContainer}>
-        <Text style={[styles.text, completed && styles.textCompleted]}>
-          {text}
-        </Text>
+        <Text style={[styles.text, completed && styles.textCompleted]}>{text}</Text>
         {dueDate && (
           <View style={styles.dateRow}>
             <Feather name="calendar" size={12} color="#8E8E93" />
@@ -37,17 +35,10 @@ export const TaskItem: React.FC<TaskItemProps> = ({ text, completed, dueDate, on
       </View>
 
       <View style={styles.actionButtons}>
-        <Pressable 
-          onPress={onEdit}
-          style={({ pressed }) => [styles.iconBtn, pressed && { opacity: 0.5 }]}
-        >
+        <Pressable onPress={onEdit} style={({ pressed }) => [styles.iconBtn, pressed && { opacity: 0.5 }]}>
           <Feather name="edit-2" size={18} color="#007AFF" />
         </Pressable>
-
-        <Pressable 
-          onPress={onDelete}
-          style={({ pressed }) => [styles.iconBtn, pressed && { opacity: 0.5 }]}
-        >
+        <Pressable onPress={onDelete} style={({ pressed }) => [styles.iconBtn, pressed && { opacity: 0.5 }]}>
           <AntDesign name="delete" size={18} color="#C7C7CC" />
         </Pressable>
       </View>
@@ -56,59 +47,14 @@ export const TaskItem: React.FC<TaskItemProps> = ({ text, completed, dueDate, on
 };
 
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 16,
-    marginBottom: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  cardCompleted: {
-    opacity: 0.6,
-  },
-  checkCircle: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: '#007AFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 12,
-  },
-  textContainer: {
-    flex: 1,
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: '#000',
-  },
-  textCompleted: {
-    textDecorationLine: 'line-through',
-    color: '#8E8E93',
-  },
-  dateRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 4,
-  },
-  dateText: {
-    color: '#8E8E93',
-    fontSize: 12,
-  },
-  actionButtons: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  iconBtn: {
-    padding: 4,
-  },
+  card: { backgroundColor: '#fff', padding: 16, borderRadius: 16, marginBottom: 12, flexDirection: 'row', alignItems: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.05, shadowRadius: 8, elevation: 2 },
+  cardCompleted: { opacity: 0.6 },
+  checkCircle: { width: 24, height: 24, borderRadius: 12, borderWidth: 2, borderColor: '#007AFF', alignItems: 'center', justifyContent: 'center', marginRight: 12 },
+  textContainer: { flex: 1 },
+  text: { fontSize: 16, fontWeight: '500', color: '#000' },
+  textCompleted: { textDecorationLine: 'line-through', color: '#8E8E93' },
+  dateRow: { flexDirection: 'row', alignItems: 'center', marginTop: 4 },
+  dateText: { color: '#8E8E93', fontSize: 12 },
+  actionButtons: { flexDirection: 'row', gap: 12 },
+  iconBtn: { padding: 4 }
 });
